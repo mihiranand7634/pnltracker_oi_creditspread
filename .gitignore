@@ -1,0 +1,17 @@
+# secrets
+.env
+kite_access_token.json
+
+# caches
+cache_instruments_NFO.csv
+out_chains/
+out_trades/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
