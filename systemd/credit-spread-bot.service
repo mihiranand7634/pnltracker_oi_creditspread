@@ -1,0 +1,20 @@
+[Unit]
+Description=Credit Spread Chain + PnL Tracker
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/opt/credit-spread-bot
+EnvironmentFile=/opt/credit-spread-bot/.env
+ExecStart=/opt/credit-spread-bot/.venv/bin/python3 /opt/credit-spread-bot/credit_spread_bot.py
+Restart=always
+RestartSec=5
+
+# simple file logs (optional)
+StandardOutput=append:/opt/credit-spread-bot/out_trades/service.log
+StandardError=append:/opt/credit-spread-bot/out_trades/service.err.log
+
+[Install]
+WantedBy=multi-user.target
